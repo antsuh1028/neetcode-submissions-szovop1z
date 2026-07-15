@@ -1,0 +1,30 @@
+from typing import List
+
+
+def disallow_negatives(num: int) -> int:
+    return max(0,num)
+
+
+def max_difference(nums: List[int]) -> int:
+    first,second = 0,1
+    n = len(nums)
+    diff = 0
+    while second < n:
+        diff = max(diff, nums[second]-nums[first])
+        first += 1
+        second += 1
+    return diff
+
+
+
+# do not modify below this line
+print(disallow_negatives(-2))
+print(disallow_negatives(-1))
+print(disallow_negatives(0))
+print(disallow_negatives(1))
+print(disallow_negatives(2))
+
+print(max_difference([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+print(max_difference([1, 2, 3, 4, 5, 6, 8, 9]))
+print(max_difference([10, 1, 3, 7]))
+print(max_difference([2, 4, 7, 5, 7, 8, 4, 2]))
